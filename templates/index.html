@@ -1,0 +1,63 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation</title>
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com"> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Moirai+One&family=Nanum+Myeongjo&family=Roboto:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Sign Language Translation</h1>
+    </header>
+    <nav>
+        <a href="/chatgpt/">챗봇</a>
+        <a href="/signlanguagetochatgpt/">수어 번역</a>
+        <a href="/selfchatgpt/">기초 수어</a>
+    </nav>
+    <section>
+        <h2>수어 번역 서비스 안내</h2>
+        <br>
+        <p>수어 번역 서비스를 통해 손쉽게 채팅과 수어 번역을 경험하세요. 다양한 기능을 활용하여 원하는 서비스를 이용해보세요.</p>
+        <p>ChatGPT API를 활용하여 자연스러운 대화를 즐기거나, 수어-ChatGPT 연동을 통해 수어로 메시지를 전달하세요.</p>
+        <p>더 많은 기능과 업데이트를 기대해주세요!</p>
+        <!-- 변경된 부분: 이미지 추가 -->
+    </section>
+    <section>
+        <h2>다양한 서비스</h2>
+        <div class="service">
+            <a href="/signlanguagetochatgpt/">
+                <img src="https://buly.kr/9iCqMNU" alt="수어 번역 이미지">
+            </a>
+            <h3>수어 번역</h3>
+            <p>수어-ChatGPT 연동을 통해 수어로 메시지를 전달하세요.</p>
+        </div>
+    
+        <div class="service">
+            <a href="/chatgpt/">
+                <img src="https://buly.kr/31Q35EK" alt="챗봇 이미지">
+            </a>
+            <h3>챗봇</h3>
+            <p>ChatGPT API를 활용하여 자연스러운 대화를 즐기세요.</p>
+        </div>
+    
+        <div class="service">
+            <a href="/selfchatgpt/">
+                <img src="https://buly.kr/8eiIT2z" alt="기초 수어 이미지">
+            </a>
+            <h3>기초 수어</h3>
+            <p>기본적인 수어를 배워보세요.</p>
+        </div>
+    </section>
+    <!-- 변경된 부분: 푸터 추가 -->
+    <footer>
+        <h3>
+            make by KT Aivle School 4기 AI 21조
+        </h3>
+    </footer>
+</body>
+</html>

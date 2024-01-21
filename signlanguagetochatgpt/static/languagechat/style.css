@@ -1,0 +1,116 @@
+header,head {
+  font-family: 'Nanum Myeongjo', serif;
+    background: linear-gradient(to left, #000428, #004e92);
+    color: white; 
+    padding: 1em;
+    font-weight: bold;
+  }
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+  }
+  
+  nav {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-weight: bold;
+  }
+  
+  nav a {
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin: 0.5em;
+    text-decoration: none;
+    display: inline; /* 인라인으로 표시 */
+  }
+  
+  
+  div.left {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 40px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  div.right {
+    width: 50%;
+    float: right;
+    box-sizing: border-box;
+    padding: 40px;
+  }
+  
+  div.state {
+    width: 160px;
+    height: 40px;
+    background-color: #43b68a;
+    border-radius: 20px 20px 0 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  div.result {
+    width: 100%;
+    height: 150px;
+    max-height: 100%;
+    border-radius: 0 20px 20px 20px;
+    background-color: white;
+    border-color: #43b68a;
+    border-width: 2px;
+    border-style: solid;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+  div.button {
+    display: flex;
+    padding: 20px;
+  }
+  
+  button {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #004E92;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    color: #0C4B33;
+  }
+  
+  footer {
+    /* 변경된 부분: 푸터의 배경색을 흰색으로 변경 */
+    background-color: white;
+    /* 변경된 부분: 푸터의 글씨색을 검정색으로 변경 */
+    color: black;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

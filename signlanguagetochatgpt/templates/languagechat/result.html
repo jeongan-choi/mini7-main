@@ -1,0 +1,58 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation</title>
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com"> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'languagechat/chat_style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Roboto:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Sign Language Translation</h1>
+    </header>
+    <nav>
+      <a href="/chatgpt/">챗봇</a>
+      <a href="/">홈</a>
+      <a href="/selfchatgpt/" target="_blank">기초 수어</a>
+    </nav>
+    
+
+  <div class="left">
+    <div class="state">
+      <h3>이미지</h3>
+    </div>
+    <div class="result">
+      {% for img in imglist %}
+        <img src='../media/{{img}}'>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="state">
+      <h3>해석 결과</h3>
+    </div>
+    <div class="result">
+      {{question}}
+    </div>
+    <p></p>
+    <div class="one-box">
+      <div class="state">
+        <h3>chatGPT의 응답</h3>
+      </div>
+      <div class="result">
+        <span id="result">{{result}}</span>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

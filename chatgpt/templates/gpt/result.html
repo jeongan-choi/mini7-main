@@ -1,0 +1,36 @@
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'gpt/style.css' %}">
+{% endblock %}
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation</title>
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com"> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Moirai+One&family=Nanum+Myeongjo&family=Roboto:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Sign Language Translation</h1>
+    </header>
+    <nav>
+        <a href="/">홈</a>
+        <a href="/signlanguagetochatgpt/">수어 번역</a>
+        <a href="/selfchatgpt/">기초 수어</a>
+    </nav>
+<article class="main-content">
+    <form action="chat" method="post" entype="application/x-www-form-urlencoded">
+        {% csrf_token %}
+        <div id="file-module-0">
+            <span>me</span> <textarea id="question" name="question">{{question}}</textarea>
+        </div>
+        <div id='button1'><button id="text-button" type="submit">질문</button></div>
+        <div id="file-modeul-1">
+            <textarea id="result" name="result">{{result}}</textarea><span>gpt</span>
+        </div>
+    </form>
+</article>
+</body>

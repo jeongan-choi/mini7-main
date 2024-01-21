@@ -1,0 +1,96 @@
+h2, h3, p {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+header {
+    font-family: 'Nanum Myeongjo', serif;
+    background: linear-gradient(to left, #000428, #004e92);
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    color: #0C4B33;
+}
+
+nav {
+    background-color: white;
+    color: black;
+    padding: 1em;
+    text-align: right;
+    font-weight: bold;
+}
+
+nav a {
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin: 0.5em;
+    text-decoration: none;
+    display: inline;
+}
+
+section:nth-of-type(1) {
+    padding: 2em;
+    text-align: center;
+    background: #eeeeee;
+    color: black;
+    margin-bottom: 50px;
+}
+
+section:nth-of-type(2) {
+    padding: 2em;
+    text-align: center;
+    background: linear-gradient(to right, #004e92, #000428);
+    color: white;
+    margin-bottom: 50px;
+}
+
+.slider .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider .slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px; /* 이미지 아래 간격 조절 */
+    max-height: 250px;
+}
+
+.slider .slide .description {
+    margin-top: 20px; /* 텍스트 위 간격 조절 */
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    max-height: 250px;
+    margin-bottom: 20px; /* 이미지 아래 간격 조절 */
+}
+
+
+footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

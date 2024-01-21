@@ -1,0 +1,186 @@
+/* nav */
+
+header {
+    font-family: 'Nanum Myeongjo', serif;
+    background: linear-gradient(to left, #000428, #004e92);
+    color: white; 
+    padding: 1em;
+}
+h1 {
+    font-family: 'Nanum Myeongjo', serif;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+
+nav {
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-weight: bold;
+}
+
+nav a {
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    margin: 0.5em;
+    text-decoration: none;
+    display: inline; /* 인라인으로 표시 */
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.nav-home {
+    font-size: 1.75em;
+    transition: font-size 0.3s;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-list ul li {
+    list-style: none;
+    color: white;
+    font-weight: bold;
+    /* background-color: #2d2d2d; */
+    float: left;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 0.25rem;
+}
+
+.menuLink {
+    color: white;
+    padding: 1rem;
+}
+
+a {
+    text-decoration-line: none;
+    text-align: center;
+}
+
+
+/* header */
+
+.header-img {
+    background-image: url("../images/student-849825_1280.jpg");
+    background-size: auto;
+}
+
+.header-img-cover {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 7em 0;
+    background-color: rgba(0, 0, 0, 0.4);                                                                 
+    z-index:1;
+}
+
+.header-img-cover h2 {
+    display: block;
+    color: white;
+    
+}
+
+
+/* article */
+
+.main-content {
+    padding: 100px 0;
+}
+
+form {
+    text-align: center;
+}
+
+#file-module-0 {
+    margin-left:30px;
+    margin-top: 30px;
+}
+
+#file-module-0 span {
+    font-size: 25px;
+    color :white;
+    padding: 12px 18px 15px;
+    background-color: rgb(156, 128, 193);
+    border-radius: 100%;
+}
+
+textarea {
+    border-radius: 30px 20px 30px 0px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-left: 15px;
+}
+
+#question {
+    width: 500px;
+    padding: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+#text-button {
+    padding:3px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:8px;
+    margin-left:-356px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color:white;
+    border-radius: 5px 5px 5px 5px;
+    border-color: white;
+}
+
+#file-modeul-1 {
+    margin-left:95px;
+    margin-top: 30px;
+}
+
+#result {
+    width: 500px;
+    height: 200px;
+    padding: 20px;
+    background-color: rgb(165, 160, 172);
+    background-color: rgba(0, 0, 0, 0.1); 
+    border-radius: 20px 30px 0px 20px;
+}
+
+#file-modeul-1 span {
+    font-size: 25px;
+    color :rgb(156, 128, 193);
+    padding: 12px 18px 15px;
+    margin-left: 20px;
+    background-color: black;
+    border-radius: 100%;
+}
+
+
+/* footer */
+
+footer {
+    height: 5em;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: C2C2C2;
+    text-align: center;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    color: #0C4B33;
+}

@@ -1,0 +1,74 @@
+{% load static %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'languagechat/style.css' %}">
+  <script>
+    let idNum = 0;
+
+    function addFile() {
+      deepCopy();
+    }
+
+    function deepCopy() {
+      // 'test' node 선택
+      const fileModule = document.getElementById('file-module-' + idNum);
+      // 노드 복사하기 (deep copy)
+      const newNode = fileModule.cloneNode(true);
+
+      console.log(newNode)
+
+      // 복사된 Node id 변경하기
+      idNum++;
+      newNode.id = 'file-module-' + idNum;
+
+      // 복사한 노드 붙여넣기
+      fileModule.after(newNode);
+    }
+  </script>
+{% endblock %}
+<html>
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation</title>
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com"> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Moirai+One&family=Nanum+Myeongjo&family=Roboto:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+      <h1>Sign Language Translation</h1>
+  </header>
+  <nav>
+    <a href="/chatgpt/">챗봇</a>
+    <a href="/">홈</a>
+    <a href="/selfchatgpt/">기초 수어</a>
+  </nav>
+  <div class="left">
+  <form action="chat" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <span id="file-module-0">
+          <fieldset>
+              <legend><h3>파일 업로드하기</h3></legend>
+              <input name="files" type="file">
+          </fieldset>
+      </span>
+  
+  </div>
+  <div class="right">
+    <div class="state">
+      <h3>해석 결과</h3>
+    </div>
+    <div class="result">
+      <img src="{% static 'languagechat/1.png' %}" alt="로딩 중">
+    </div>
+    <div class ="button">
+      <button onclick="addFile()" type="button"><h3>파일 추가</h3></button>
+      <button onclick="addFile()" type="button"><h3>분석 시작</h3></button>
+    </div>
+
+    <div><input type="submit" value="ChatGPT에게 수어로 문의하기"></div>
+  </div>
+  </form>
+</body>
+</html>

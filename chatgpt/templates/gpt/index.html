@@ -1,0 +1,52 @@
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'gpt/style.css' %}">
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation</title>
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com"> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Moirai+One&family=Nanum+Myeongjo&family=Roboto:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Sign Language Translation</h1>
+    </header>
+    <nav>
+        <a href="/">홈</a>
+        <a href="/signlanguagetochatgpt/">수어 번역</a>
+        <a href="/selfchatgpt/">기초 수어</a>
+    </nav>
+
+<article class="main-content">
+    <form id="questionForm" action="chat" method="post" entype="application/x-www-form-urlencoded" onsubmit="submitForm(event)">
+        {% csrf_token %}
+        <div id="file-module-0">
+            <span>Q</span> <textarea id="question" name="question" placeholder="(ex) 수어가 뭐야?" onkeydown="handleEnterKey(event)"></textarea>
+        </div>
+        <div><button id="text-button" type="submit">질문</button></div>
+    </form>
+
+    <script>
+        function handleEnterKey(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                submitForm(event);
+            }
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('questionForm').submit();
+        }
+    </script>
+</article>
+</body>
+</html>

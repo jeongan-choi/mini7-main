@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<link rel="stylesheet" href="{% static 'selfgpt/style.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translation</title>
+    <link rel="stylesheet" href="{% static 'selfgpt/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Moirai+One&family=Nanum+Myeongjo&family=Roboto:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
+    <!-- slick 라이브러리 스타일 추가 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var slider = $('.slider');
+            var sections = $('.sections .section');
+
+            slider.slick({
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                adaptiveHeight: true
+            });
+
+            slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                // Change active class for sections
+                sections.removeClass('active');
+                sections.eq(nextSlide).addClass('active');
+
+                // Update description
+                var description = sections.eq(nextSlide).attr('data-description');
+                $('.section.active .text-container').html('<p>' + description + '</p>');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Sign Language Translation</h1>
+    </header>
+    <nav>
+        <a href="/chatgpt/">챗봇</a>
+        <a href="/signlanguagetochatgpt/">수어 번역</a>
+        <a href="/">홈</a>
+    </nav>
+    <div class="slider-container">
+        <!-- Slick 슬라이더 추가 -->
+        <div class="slider" id="image-slider">
+            <div class="slide" data-description="기본적인 수어를 배워보세요.">
+                <img src="https://buly.kr/8eiIT2z" alt="기초 수어 이미지">
+                <div class="description">
+                    <br>
+                    <br>
+                    기본적인 수어를 배워보세요.</div>
+            </div>
+            <div class="slide" data-description="오른 손바닥으로 주먹을 쥔 왼 팔을 쓸어내린 다음, 두 주먹을 쥐고 바닥이 아래로 향하게하여 가슴 앞에서 아래로 내린다.">
+                <img src="https://url.kr/fmbtpx" alt="안녕하세요.">
+                <div class="description">
+                    <br>
+                    <br>
+                    오른 손바닥으로 주먹을 쥔 왼 팔을 쓸어내린 다음<br>
+                    두 주먹을 쥐고 바닥이 아래로 향하게하여 가슴 앞에서 아래로 내린다.</div>
+            </div>
+            <div class="slide" data-description="두 손을 약간 구부려 손끝을 양쪽 가슴에 대고 상하로 엇갈리게 두 번 움직인다.">
+                <img src="https://url.kr/mr8x3l" alt="반갑습니다.">
+                <div class="description">
+                    <br>
+                    <br>
+                    두 손을 약간 구부려 손끝을 양쪽 가슴에 대고<br>
+                    상하로 엇갈리게 두 번 움직인다.</div>
+            </div>
+            <div class="slide" data-description="손끝이 밖으로 향하게 펴서 모로 세운 오른손의 4지 옆면을 손바닥이 아래로 향하게 편 왼 손등에 두 번 댄다.">
+                <img src="https://url.kr/f5hpjx" alt="감사합니다.">
+                <div class="description">
+                    <br>
+                    <br>
+                    손끝이 밖으로 향하게 펴서 모로 세운 오른손의 4지 옆면을<br>
+                    손바닥이 아래로 향하게 편 왼 손등에 두 번 댄다.</div>
+            </div>
+            <div class="slide" data-description="두 손 각각 손가락을 모아 붙여 끝이 옆으로 향하게 하여 5지 등을 배에 대고 1·2·3·4지를 동시에 뗀다.">
+                <img src="https://url.kr/nh46b1" alt="배가 부릅니다.">
+                <div class="description">
+                    <br>
+                    <br>
+                    두 손 각각 손가락을 모아 붙여 끝이 옆으로 향하게 하여<br>
+                    5지 등을 배에 대고 1·2·3·4지를 동시에 뗀다.</div>
+            </div>
+            <div class="slide" data-description="오른 주먹의 1지를 펴서 오른쪽 눈 밑에서 밑으로 내린 다음 1지를 접고 5지를 펴서 바닥으로 턱 밑을 스쳐 낸다.">
+                <img src="https://url.kr/rc4o6e" alt="졸립니다.">
+                <div class="description">
+                    <br>
+                    <br>
+                    오른 주먹의 1지를 펴서 오른쪽 눈 밑에서 밑으로 내린 다음<br>
+                    1지를 접고 5지를 펴서 바닥으로 턱 밑을 스쳐 낸다.</div>
+            </div>
+        </div>
+        <div class="sections">
+            <!-- 첫 번째 섹션 -->
+            <section class="section active" data-description="기본적인 수어를 배워보세요.">
+                <h2>안녕하세요</h2>
+                <p>기초 수어로 여러 가지 표현을 배워보세요.</p>
+                <div class="service">
+                    <img src="https://buly.kr/8eiIT2z" alt="기초 수어 이미지">
+                    <p>기본적인 수어를 배워보세요.</p>
+                </div>
+            </section>
+            <!-- 두 번째 섹션 -->
+            <section class="section" data-description="오른 손바닥으로 주먹을 쥔 왼 팔을 쓸어내린 다음, 두 주먹을 쥐고 바닥이 아래로 향하게하여 가슴 앞에서 아래로 내린다.">
+                <h3>안녕하세요.</h3>
+                <img src="https://url.kr/fmbtpx" alt="안녕하세요.">
+                <div class="text-container">
+                    <p>오른 손바닥으로 주먹을 쥔 왼 팔을 쓸어내린 다음, 두 주먹을 쥐고 </p>
+                    <p>바닥이 아래로 향하게하여 가슴 앞에서 아래로 내린다.</p>
+                </div>
+            </section>
+            <!-- 세 번째 섹션 -->
+            <section class="section" data-description="두 손을 약간 구부려 손끝을 양쪽 가슴에 대고 상하로 엇갈리게 두 번 움직인다.">
+                <h4>반갑습니다.</h4>
+                <div class="service">
+                    <img src="https://url.kr/mr8x3l" alt="반갑습니다.">
+                    <div class="text-container">
+                        <p>두 손을 약간 구부려 손끝을 양쪽 가슴에 대고</p>
+                        <p> 상하로 엇갈리게 두 번 움직인다.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- 네 번째 섹션 -->
+            <section class="section" data-description="손끝이 밖으로 향하게 펴서 모로 세운 오른손의 4지 옆면을 손바닥이 아래로 향하게 편 왼 손등에 두 번 댄다.">
+                <h5>감사합니다.</h5>
+                <div class="service">
+                    <img src="https://url.kr/f5hpjx" alt="감사합니다.">
+                    <div class="text-container">
+                        <p>손끝이 밖으로 향하게 펴서 </p>
+                        <p>모로 세운 오른손의 4지 옆면을 손바닥이 아래로 향하게 편</p>
+                        <p> 왼 손등에 두 번 댄다.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- 다섯 번째 섹션 -->
+            <section class="section" data-description="두 손 각각 손가락을 모아 붙여 끝이 옆으로 향하게 하여 5지 등을 배에 대고 1·2·3·4지를 동시에 뗀다.">
+                <h6>배가 부릅니다.</h6>
+                <div class="service">
+                    <img src="https://url.kr/nh46b1" alt="배가 부릅니다.">
+                    <div class="text-container">
+                        <p>두 손 각각 손가락을 모아 붙여 끝이 옆으로 향하게 하여</p>
+                        <p> 5지 등을 배에 대고 1·2·3·4지를 동시에 뗀다.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- 여섯 번째 섹션 -->
+            <section class="section" data-description="오른 주먹의 1지를 펴서 오른쪽 눈 밑에서 밑으로 내린 다음 1지를 접고 5지를 펴서 바닥으로 턱 밑을 스쳐 낸다.">
+                <h7>졸립니다.</h7>
+                <div class="service">
+                    <img src="https://url.kr/rc4o6e" alt="졸립니다.">
+                    <div class="text-container">
+                        <p>오른 주먹의 1지를 펴서 오른쪽 눈 밑에서 밑으로 내린 다음</p>
+                        <p>1지를 접고 5지를 펴서 바닥으로 턱 밑을 스쳐 낸다.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer>
+    </footer>
+</body>
+
+</html>
